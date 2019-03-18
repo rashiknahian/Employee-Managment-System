@@ -31,7 +31,7 @@
                     </div>
                     <div class="hr"></div>
                     <div class="foot-lnk">
-                        <a href="#forgot">Forgot Password?</a>
+                        <a href="reset.php">Forgot Password?</a>
                     </div>
                 </div>
                 <div class="sign-up-htm">
