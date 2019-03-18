@@ -18,8 +18,8 @@
             <li><a href="#map">Address</a></li>
             <li><a href="#contact">Contact</a></li>
             <hr>
-            <li><a href="">Login</a></li>
-            <li><a href="">Registration</a></li>
+            <li><a href="User/">Login</a></li>
+            <li><a href="User/">Registration</a></li>
             <hr>
             <li><a href="">Admin</a></li>
         </ul>
