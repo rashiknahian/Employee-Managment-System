@@ -47,7 +47,7 @@ include 'dbconnect.php';
                             <td>".$data['employeeId']."</td>
                             <td>".$data['task']."</td>
                             <td>".$data['created']."</td>
-                            <td>".$data['Deadline']."</td>
+                            <td>".$data['deadline']."</td>
                             
                         </tr>
                         "; 
