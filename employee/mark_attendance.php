@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,16 +17,16 @@
             <p>Enter Attendance Data</p>
             <br>
             <div class="form-style">
-            <form method="post" action="employeeDataSave.php" enctype='multipart/form-data'>
+            <form method="post" action="mark_attendance_save.php" enctype='multipart/form-data'>
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Employee's Id" name="employeeId" required />
                 </div>
                 
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Entry Date" name="entry" required />
+                    <input type="text" class="form-control" placeholder="Entry Time" name="starttime" required />
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Exit Date" name="exit" required />
+                    <input type="text" class="form-control" placeholder="Exit Time" name="endtime" required />
                 </div>
                 <div class="form-group">
                     <div class="col-md-6">
