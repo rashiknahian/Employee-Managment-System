@@ -1,29 +1,37 @@
 <?php
+// Setting Cookies
+
+$cookie_value = "Employee Management";
+setcookie("sitename", $cookie_value, time() + 3600, "/", 1, 1);
+
+// Contact Us Form submit Script
 $message = '';
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
     /*Form Data */
     $name = $_POST['name'];
     $email = $_POST['email'];
     $subject = $_POST['subject'];
-    
-    
+
+    // Website Owner Mail send
     $to = "rashik.i.nahian@gmail.com";
     $subject = "Responses from Contact Us Page";
     $txt = "Full Name: $name ,  Email: $email <br> Message $subject";
-    $headers = "From: no-reply@employeemanagment.com" . "\r\n" .
-            "CC: ";
-    
-    //User Mail
+    $headers = "From: no-reply@employeemanagement.com" . "\r\n" .
+        "CC: ";
+
+    //User Mail send
     $subject2 = "Thank You";
     $txt2 = "Thank You for your request.We will get back to you soon";
-    
+
+    //Mail Sending Function
     $flag = mail($to, $subject, $txt, $headers);
     mail($email, $subject2, $txt2, $headers);
-    if($flag){
+
+    // Confirmation Message
+    if ($flag) {
         $message = "Successfully Sumbmitted!";
         echo "<script type='text/javascript'>alert('$message');</script>";
-    }
-    else{
+    } else {
         $message = "Email Not Sent";
         echo "<script type='text/javascript'>alert('$message');</script>";
     }
@@ -34,6 +42,28 @@ if(isset($_POST['submit'])){
 
 <head>
 
+
+    <!-- We use Cookies Message from  https: //cookieconsent.insites.com -->
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "content": {
+    "href": "#"
+  }
+})});
+</script>
+
+<!-- Stylesheet -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     <link rel="stylesheet" href="css/style_front.css">
     <title>Employee Managment System</title>
@@ -72,6 +102,8 @@ if(isset($_POST['submit'])){
         <div><img src="images/pexels-photo-140945.jpeg"></div>
         <div><img src="images/pexels-photo-1619841.jpeg"></div>
     </div>
+    <!-- ./Slider -->
+    <!-- About Section -->
     <div class="page">
         <section id="about">
             <h1>About</h1>
@@ -83,11 +115,15 @@ if(isset($_POST['submit'])){
                 Donec sagittis, est vel euismod venenatis, nibh lectus blandit nisi, at convallis leo neque sed sapien. Proin congue pulvinar neque, non viverra enim congue non. Nulla ut commodo enim, vel scelerisque diam. Proin consequat, ex et dapibus tempus, turpis nisi viverra elit, et consequat ante leo eu justo. Integer at urna in augue porta lobortis non vitae leo. Praesent lobortis orci a odio pharetra porttitor. Sed porttitor ultrices libero et dignissim. Aenean ut nisl vel lectus accumsan auctor. Aenean odio orci, vulputate quis tristique nec, vulputate vel leo. Nam dapibus purus nec massa scelerisque feugiat. Aliquam dictum sapien lacinia elit lacinia mattis. Nam quam dolor, sodales id efficitur sit amet, rhoncus id tortor.
             </p>
         </section>
-
+    <!-- ./About Section -->
+    <!-- Google Map -->
     </div>
     <section id="map">
         <div style="width: 100%"><iframe width="100%" height="600" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=23.8153939,90.4260775913582&amp;q=+(North%20South%20University)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/map-my-route/">Plot a route map</a></iframe></div><br />
     </section>
+    <!-- ./Google Map -->
+
+    <!-- Contact Us-->
     <h1>Contact Us</h1>
     <section id="contact" class="page">
         <form method="post" name="contactForm" onsubmit="return contact()">
@@ -97,16 +133,20 @@ if(isset($_POST['submit'])){
             <label for="lname">Email</label>
             <input type="text" id="email" name="email" placeholder="Your email..">
 
-
-
             <label for="subject">Subject</label>
             <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-            <div class="g-recaptcha" data-sitekey="6LcvEJgUAAAAAPozQt9A8cjhyyAuwxe7DAIKBKm2"></div>
+            <div class="g-recaptcha" data-sitekey="6LdSL54UAAAAAP9YjJt9m6ZULnMmrxclZY9fciWq"></div>
             <br>
             <input type="submit" name="submit" value="Submit">
         </form>
     </section>
+     <!-- ./Contact Us-->
+
+      <!-- Footer-->
     <footer id="sticky">&copy&nbspEmployee Managment System 2019</footer>
+    <!-- ./Footer-->
+
+    <!-- Script-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <script type="text/javascript">
@@ -159,6 +199,8 @@ if(isset($_POST['submit'])){
         }
 
     </script>
+
+    <!-- Google ReCaptcha-->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
         $("#newsletter").submit(function(event) {
