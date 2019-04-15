@@ -1,10 +1,44 @@
+<?php
+$message = '';
+if(isset($_POST['submit'])){
+    /*Form Data */
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    
+    
+    $to = "rashik.i.nahian@gmail.com";
+    $subject = "Responses from Contact Us Page";
+    $txt = "Full Name: $name ,  Email: $email <br> Message $subject";
+    $headers = "From: no-reply@employeemanagment.com" . "\r\n" .
+            "CC: ";
+    
+    //User Mail
+    $subject2 = "Thank You";
+    $txt2 = "Thank You for your request.We will get back to you soon";
+    
+    $flag = mail($to, $subject, $txt, $headers);
+    mail($email, $subject2, $txt2, $headers);
+    if($flag){
+        $message = "Successfully Sumbmitted!";
+        echo "<script type='text/javascript'>alert('$message');</script>";
+    }
+    else{
+        $message = "Email Not Sent";
+        echo "<script type='text/javascript'>alert('$message');</script>";
+    }
+}
+
+?>
 <html>
+
 <head>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     <link rel="stylesheet" href="css/style_front.css">
     <title>Employee Managment System</title>
 </head>
+
 <body>
     <div id="sidebar">
         <div class="toggle-btn" onclick="toggleSidebar()">
@@ -18,10 +52,10 @@
             <li><a href="#map">Address</a></li>
             <li><a href="#contact">Contact</a></li>
             <hr>
-            <li><a href="User/">Login</a></li>
-            <li><a href="User/">Registration</a></li>
+            <li><a href="employee/">Login</a></li>
+
             <hr>
-            <li><a href="">Admin</a></li>
+            <li><a href="admin/">Admin</a></li>
         </ul>
 
     </div>
@@ -67,8 +101,9 @@
 
             <label for="subject">Subject</label>
             <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
-            <input type="submit" value="Submit">
+            <div class="g-recaptcha" data-sitekey="6LcvEJgUAAAAAPozQt9A8cjhyyAuwxe7DAIKBKm2"></div>
+            <br>
+            <input type="submit" name="submit" value="Submit">
         </form>
     </section>
     <footer id="sticky">&copy&nbspEmployee Managment System 2019</footer>
@@ -124,6 +159,18 @@
         }
 
     </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        $("#newsletter").submit(function(event) {
 
+            var recaptcha = $("#g-recaptcha-response").val();
+            if (recaptcha === "") {
+                event.preventDefault();
+                alert("Please check the recaptcha");
+            }
+        });
+
+    </script>
 </body>
+
 </html>

@@ -35,7 +35,7 @@ if (isset($_POST['btn-login'])) {
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>RFID Attendance System</title>
+<title>Employee Managment</title>
 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 <link href="css/bootstrap-theme.min.css" rel="stylesheet" media="screen"> 
 <link href="css/style.css" rel="stylesheet" type="text/css" />

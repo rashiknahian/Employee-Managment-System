@@ -7,6 +7,6 @@ define('CLIENT_ID', '585557285875-0st3kaeq76f95orgabaj7kbdd2gvpej8.apps.googleus
 define('CLIENT_SECRET', '55pe7d1wF96H-NujNoUtHAtk');
 
 /* Google App Redirect Url */
-define('CLIENT_REDIRECT_URL', 'https://nahian.me/EmployeeManagment/gauth.php');
+define('CLIENT_REDIRECT_URL', 'https://nahian.me/EmployeeManagment/employee/gauth.php');
 
 ?>
