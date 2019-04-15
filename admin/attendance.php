@@ -18,7 +18,7 @@ $userRow=$query->fetch_array();
 
 <head>
     <?php include "header.php";?>
-    <link rel="stylesheet" href="">
+   
 </head>
 
 <body>
@@ -56,6 +56,7 @@ $userRow=$query->fetch_array();
                     <td>".$data['employeeId']."</td>
                     <td>".$data['starttime']."</td>
                     <td>".$data['endtime']."</td>
+                  
                     
 
                 </tr>

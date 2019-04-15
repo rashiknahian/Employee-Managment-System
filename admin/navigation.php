@@ -74,6 +74,7 @@
         
         <li class="active"><a href="home.php">Home</a></li>
         <li><a href="employeeDataView.php">Employee Data View</a></li>
+        <li><a href="employeeDelete.php">Employee Remove</a></li>
         <li><a href="attendance.php">Attendance</a></li>
         <li><a href="task.php">Assign Task</a></li>
     </ul>

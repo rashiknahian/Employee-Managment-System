@@ -35,7 +35,7 @@ $query2 = $DBcon->query("SELECT * FROM employeeData ORDER BY ID DESC ");
                 <div class="form-group">
                     <label for="">Select Employee's Id</label>
                     <select name="employeeId">
-                         <?php
+                        <?php
                         
                         while($data=$query2->fetch_array()){
                             echo "<option value='".$data['employeeId']."'>'".$data['employeeId']."'</option>";
@@ -43,20 +43,11 @@ $query2 = $DBcon->query("SELECT * FROM employeeData ORDER BY ID DESC ");
                         ?>
                     </select>
                 </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Task" name="task" required />
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Deadline" name="deadline" required />
-                </div>
-                <div class="form-group">
-                    <div class="col-md-6">
-                        <input type="submit" class="form-control" name="submit" value="Submit" />
-                    </div>
-                    <div class="col-md-6">
-                        <input type="reset" class="form-control" value="Reset">
-                    </div>
-                </div>
+                <input type="text" class="form-control" placeholder="Task" name="task" required />
+                <input type="text" class="form-control" placeholder="Deadline" name="deadline" required />
+                <input type="submit" class="form-control" name="submit" value="Submit" />
+                <input type="reset" class="form-control" value="Reset">
+
             </form>
         </div>
     </div>

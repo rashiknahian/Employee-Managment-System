@@ -52,7 +52,7 @@ $userRow=$query->fetch_array();
                    
                
                               <?php
-            $query2 = $DBcon->query("SELECT * FROM employeeData");
+            $query2 = $DBcon->query("SELECT * FROM employeeData WHERE user_id=$userRow");
             while($data=$query2->fetch_array()){
            echo "
                 <tr>
@@ -64,7 +64,6 @@ $userRow=$query->fetch_array();
                     <td>".$data['phone']."</td>
                     <td>".$data['address']."</td>
                     <td>".$data['bloodGroup']."</td>
-                   
                 </tr>
                 "; 
             }

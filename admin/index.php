@@ -24,9 +24,7 @@ if (isset($_POST['btn-login'])) {
 		$_SESSION['userSession'] = $row['user_id'];
 		header("Location: home.php");
 	} else {
-		$msg = "<div class='alert alert-danger'>
-					<span class='glyphicon glyphicon-info-sign'></span> &nbsp; Invalid Username or Password !
-				</div>";
+		$msg = "<script type='text/javascript'> Invalid Username or Password !</script>";
 	}
 	$DBcon->close();
 }
@@ -34,56 +32,30 @@ if (isset($_POST['btn-login'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Employee Managment</title>
-<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-<link href="css/bootstrap-theme.min.css" rel="stylesheet" media="screen"> 
-<link href="css/style.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Employee Management</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
-<div class="signin-form">
+    <div class="signin-form">
+        <div class="form-style" style="margin-top:5%;">
+            <form class="form-signin" class="form-control" method="post" id="login-form">
+                <h2 class="form-signin-heading" >Sign In.</h2>
+                <hr />
 
-	<div class="container">
-     
-        
-       <form class="form-signin" method="post" id="login-form">
-      
-        <h2 class="form-signin-heading">Sign In.</h2><hr />
-        
-        <?php
+                <?php
 		if(isset($msg)){
 			echo $msg;
 		}
 		?>
-        
-        <div class="form-group">
-        <input type="email" class="form-control" placeholder="Email address" name="email" required />
-        <span id="check-e"></span>
+                <input type="email" class="form-control" placeholder="Email address" name="email" required />
+                <input type="password" class="form-control" placeholder="Password" name="password" required />
+                <hr />
+                <input type="submit" class="form-control" name="btn-login" id="btn-login" value="Submit" />
+                <a href="register.php"><input type="button" class="form-control" value="Sign UP Here" /></a>
+            </form>
         </div>
-        
-        <div class="form-group">
-        <input type="password" class="form-control" placeholder="Password" name="password" required />
-        </div>
-       
-     	<hr />
-        
-        <div class="form-group">
-            <button type="submit" class="btn btn-default" name="btn-login" id="btn-login">
-    		<span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign In
-			</button> 
-            
-            <a href="register.php" class="btn btn-default" style="float:right;">Sign UP Here</a>
-            
-        </div>  
-        
-        
-      
-      </form>
-
     </div>
-    
-</div>
-
 </body>
 </html>

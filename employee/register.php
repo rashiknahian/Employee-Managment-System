@@ -58,7 +58,11 @@ if(isset($_POST['btn-signup'])) {
                 <h2 class="form-signin-heading">Sign Up</h2>
                 <hr />
 
-         
+                <?php
+		if (isset($msg)) {
+			echo $msg;
+		}
+		?>
                 <input type="text" class="form-control" placeholder="Username" name="username" required />
                 <input type="email" class="form-control" placeholder="Email address" name="email" required />
                 <input type="password" class="form-control" placeholder="Password" name="password" required />

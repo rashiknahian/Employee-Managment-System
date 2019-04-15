@@ -45,25 +45,53 @@ if (isset($_POST['submit'])) {
 
     <!-- We use Cookies Message from  https: //cookieconsent.insites.com -->
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
-<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
-<script>
-window.addEventListener("load", function(){
-window.cookieconsent.initialise({
-  "palette": {
-    "popup": {
-      "background": "#000"
-    },
-    "button": {
-      "background": "#f1d600"
-    }
-  },
-  "content": {
-    "href": "#"
-  }
-})});
-</script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+    <script>
+        window.addEventListener("load", function() {
+            window.cookieconsent.initialise({
+                "palette": {
+                    "popup": {
+                        "background": "#000"
+                    },
+                    "button": {
+                        "background": "#f1d600"
+                    }
+                },
+                "content": {
+                    "href": "#"
+                }
+            })
+        });
 
-<!-- Stylesheet -->
+    </script>
+
+    <!-- Service Worker -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
+    <meta name="google" content="notranslate" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta http-equiv="cache-control" content="no-store" />
+    <meta http-equiv="expires" content="0" />
+    <script>
+        // register service worker:
+        if (navigator.serviceWorker) {
+            navigator.serviceWorker.register('/service-worker.js').then(function() {
+                    return navigator.serviceWorker.ready;
+                })
+                .then(function(registration) {
+                    console.log(registration); // service worker is ready and working...
+                });
+
+            navigator.serviceWorker.addEventListener('message', function(event) {
+                console.log(event.data.message); // Hello World !
+            });
+        }
+
+    </script>
+    <!-- ./Service Worker -->
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     <link rel="stylesheet" href="css/style_front.css">
     <title>Employee Managment System</title>
@@ -83,6 +111,7 @@ window.cookieconsent.initialise({
             <li><a href="#contact">Contact</a></li>
             <hr>
             <li><a href="employee/">Login</a></li>
+            <li><a href="employee/register.php">Register</a></li>
 
             <hr>
             <li><a href="admin/">Admin</a></li>
@@ -115,8 +144,8 @@ window.cookieconsent.initialise({
                 Donec sagittis, est vel euismod venenatis, nibh lectus blandit nisi, at convallis leo neque sed sapien. Proin congue pulvinar neque, non viverra enim congue non. Nulla ut commodo enim, vel scelerisque diam. Proin consequat, ex et dapibus tempus, turpis nisi viverra elit, et consequat ante leo eu justo. Integer at urna in augue porta lobortis non vitae leo. Praesent lobortis orci a odio pharetra porttitor. Sed porttitor ultrices libero et dignissim. Aenean ut nisl vel lectus accumsan auctor. Aenean odio orci, vulputate quis tristique nec, vulputate vel leo. Nam dapibus purus nec massa scelerisque feugiat. Aliquam dictum sapien lacinia elit lacinia mattis. Nam quam dolor, sodales id efficitur sit amet, rhoncus id tortor.
             </p>
         </section>
-    <!-- ./About Section -->
-    <!-- Google Map -->
+        <!-- ./About Section -->
+        <!-- Google Map -->
     </div>
     <section id="map">
         <div style="width: 100%"><iframe width="100%" height="600" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=23.8153939,90.4260775913582&amp;q=+(North%20South%20University)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/map-my-route/">Plot a route map</a></iframe></div><br />
@@ -140,9 +169,9 @@ window.cookieconsent.initialise({
             <input type="submit" name="submit" value="Submit">
         </form>
     </section>
-     <!-- ./Contact Us-->
+    <!-- ./Contact Us-->
 
-      <!-- Footer-->
+    <!-- Footer-->
     <footer id="sticky">&copy&nbspEmployee Managment System 2019</footer>
     <!-- ./Footer-->
 

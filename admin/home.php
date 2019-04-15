@@ -11,11 +11,11 @@
     <!-- ./Responsive Navigation -->
     
     <!-- Main Body -->
-    <div class="col-md-12">
-    <div class="container main">
+   
+    <div class=" main">
        
         <p>Welcome <strong></strong><br>to <br> Employee Managment System</p>
-    </div>
+  
     <!-- ./Main Body -->
     
    
