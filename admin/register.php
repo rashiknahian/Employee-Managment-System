@@ -17,7 +17,7 @@ if(isset($_POST['btn-signup'])) {
 	
 	$hashed_password = password_hash($upass, PASSWORD_DEFAULT); // this function works only in PHP 5.5 or latest version
 	
-	$check_email = $DBcon->query("SELECT email FROM users WHERE email='$email'");
+	$check_email = $DBcon->query("SELECT admin FROM users WHERE email='$email'");
 	$count=$check_email->num_rows;
 	
 	if ($count==0) {

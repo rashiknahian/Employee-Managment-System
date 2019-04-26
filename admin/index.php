@@ -15,7 +15,7 @@ if (isset($_POST['btn-login'])) {
 	$email = $DBcon->real_escape_string($email);
 	$password = $DBcon->real_escape_string($password);
 	
-	$query = $DBcon->query("SELECT user_id, email, password FROM users WHERE email='$email'");
+	$query = $DBcon->query("SELECT user_id, email, password FROM admin WHERE email='$email'");
 	$row=$query->fetch_array();
 	
 	$count = $query->num_rows; // if email/password are correct returns must be 1 row

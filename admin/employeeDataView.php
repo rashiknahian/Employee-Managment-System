@@ -29,29 +29,29 @@ $userRow=$query->fetch_array();
 
     <!-- Main Body -->
 
-        <div class=" main">
-            <p>View Employees' Data</p>
+    <div class=" main">
+        <p>View Employees' Data</p>
 
-            <!-- Data View In Table-->
-            <table id="employee">
-                <thead>
-                    <tr class="success">
-                        <th>Image</th>
-                        <th>Id</th>
-                        <th>Full Name</th>
-                        <th>Designation</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Address</th>
-                        <th>Blood Group</th>
+        <!-- Data View In Table-->
+        <table id="employee">
+            <thead>
+                <tr class="success">
+                    <th>Image</th>
+                    <th>Id</th>
+                    <th>Full Name</th>
+                    <th>Designation</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Blood Group</th>
 
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                   
-               
-                              <?php
+                </tr>
+            </thead>
+            <tbody>
+
+
+
+        <?php
             $query2 = $DBcon->query("SELECT * FROM employeeData");
             while($data=$query2->fetch_array()){
            echo "
@@ -69,13 +69,13 @@ $userRow=$query->fetch_array();
                 "; 
             }
             //While Loop Ends
-            ?>
-                </tbody>
-            </table>
+         ?>
+            </tbody>
+        </table>
 
-        </div>
-        <!-- ./Main Body -->
-  
+    </div>
+    <!-- ./Main Body -->
+
 </body>
 
 </html>

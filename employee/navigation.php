@@ -74,7 +74,7 @@
 
         <li class="active"><a href="home.php">Home</a></li>
         <li><a href="employeeDataAdd.php">Employee Data Store</a></li>
-        <li><a href="employeeDelete.php">Employee Remove</a></li>
+        
         <li><a href="mark_attendance.php">Attendance store</a></li>
         <li><a href="view_task.php">Assigned Task</a></li>
         <li><a href="logout.php">Log Out</a></li>

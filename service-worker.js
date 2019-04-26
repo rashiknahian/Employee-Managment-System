@@ -25,7 +25,7 @@ self.addEventListener('push', function (event) {
         clients.matchAll({type: 'window'}).then(function (clientList) {
           if (clientList.length > 0) {
             messageToClient(clientList[0], {
-              message: self.pushData.body // suppose it is: "Hello World !"
+              message: self.pushData.body 
             });
           }
         });
